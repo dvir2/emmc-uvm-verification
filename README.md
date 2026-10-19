@@ -1,11 +1,11 @@
 # eMMC / iNAND Controller UVM Verification Environment
 
-An industry-standard Universal Verification Methodology (UVM) testbench designed for robust block-level verification of an eMMC/iNAND memory controller interface. The environment focuses on cycle-accurate protocol compliance, reactive monitoring, and end-to-end data integrity checking.
+An UVM testbench designed for block-level verification of an eMMC/iNAND memory controller interface. The environment focuses on accurate protocol compliance, reactive monitoring, and end-to-end data integrity checking.
 
 ---
 
 ## 🚀 Key Features & Highlights
-* **Protocol-Aware "Lock-and-Burst" Monitor**: Eliminates race conditions and off-by-one phase shift errors by combining reactive handshake synchronization (`while` loop on `wr_en`/`dat_vld`) with deterministic 512-byte payload burst collection (`for` loop).
+* **Protocol-Aware Monitor**: Eliminates race conditions and off-by-one phase shift errors by combining reactive handshake synchronization (`while` loop on `wr_en`/`dat_vld`) with deterministic 512-byte payload burst collection (`for` loop).
 * **Modular UVM Architecture**: Fully decoupled stimulus generation, driving, monitoring, and scoreboard checking.
 * **Automated Scoreboard & Reference Model**: Maintains an LBA-indexed reference memory model to cross-check read data streams against previous writes down to the exact byte.
 * **UVM Factory Integration**: Utilizes factory registration (``uvm_object_utils`) and dynamic object creation (`type_id::create`) to ensure flexibility and scalability.

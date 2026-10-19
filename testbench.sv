@@ -4,7 +4,7 @@ import uvm_pkg::*;
 import inand_pkg::*;
 
 // =========================================================================
-// 1. Physical Interface Definition
+// 0. Physical Interface Definition
 // =========================================================================
 interface inand_if (input logic clk, input logic rst_n);
   
@@ -16,7 +16,9 @@ interface inand_if (input logic clk, input logic rst_n);
   logic [7:0]  dat_out;
   logic        dat_vld;
   logic        ready;
-
+// =========================================================================
+// 1. Clocking Block and Modport for Driver and Monitor
+// =========================================================================
   clocking drv_cb @(posedge clk);
     default input #1ns output #1ns;
     output cmd_stb, cmd_code, lba, wr_en, dat_in;
